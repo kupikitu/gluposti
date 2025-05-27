@@ -19,19 +19,6 @@
   <script>
     const video = document.getElementById('bgVideo');
 
-    overlay.addEventListener('click', async () => {
-      try {
-        if (video.requestFullscreen) {
-          await video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          await video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) {
-          await video.msRequestFullscreen();
-        }
-
-        overlay.style.display = 'none';
-        video.style.display = 'block';
-
         await video.play();
       } catch (err) {
         console.error('Error entering fullscreen or playing video:', err);
